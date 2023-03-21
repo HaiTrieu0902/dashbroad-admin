@@ -6,7 +6,7 @@ import { RiNotification3Line } from 'react-icons/ri';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import avatar from '../data/avatar.jpg';
+import avatar from '../data/htrieu.jpg';
 import { Cart, Chat, Notifications, UserProfile } from '../components';
 import { useStateContext } from '../contexts/ContextProvider';
 
@@ -16,9 +16,12 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
             type="button"
             onClick={customFunc}
             style={{ color }}
-            className="relative text-xl rounded-full p-3 hover:bg-light-gray"
+            className="relative text-lg rounded-full p-3 hover:bg-light-gray"
         >
-            <span style={{ background: dotColor }} className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2">
+            <span
+                style={{ background: dotColor }}
+                className="absolute text-base inline-flex rounded-full h-2 w-2 right-2 top-2"
+            >
                 {icon}
             </span>
         </button>
@@ -50,28 +53,28 @@ const NavBar = () => {
                 title="Menu"
                 customFunc={() => setActiveMenu((prevMenu) => !prevMenu)}
                 color={currentColor}
-                icon={<AiOutlineMenu />}
+                icon={<AiOutlineMenu className="text-base" />}
             ></NavButton>
             <div className="flex">
                 <NavButton
                     title="Cart"
                     customFunc={() => handleClick('cart')}
                     color={currentColor}
-                    icon={<FiShoppingCart />}
+                    icon={<FiShoppingCart className="text-base" />}
                 ></NavButton>
                 <NavButton
                     title="Chat"
                     dotColor="#03c9d7"
                     customFunc={() => handleClick('chat')}
                     color={currentColor}
-                    icon={<BsChatLeft />}
+                    icon={<BsChatLeft className="text-base" />}
                 ></NavButton>
                 <NavButton
                     title="Notification"
                     dotColor="#03c9d7"
                     customFunc={() => handleClick('notification')}
                     color={currentColor}
-                    icon={<RiNotification3Line />}
+                    icon={<RiNotification3Line className="text-base" />}
                 ></NavButton>
 
                 <TooltipComponent content="Profile" position="BottomCenter">
